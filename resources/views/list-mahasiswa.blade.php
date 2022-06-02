@@ -12,17 +12,21 @@
                 </div>
             </nav>
 
-<table border=1>
+<a href="/form-tambah" class="btn btn-primary mt-3">Tambah</a>
+
+<table class="table table-striped mt-3">
     <tr>
         <th>NIM</th>
         <th>NAMA</th>
         <th>KELAS</th>
+        <th>OPSI</th>
     </tr>
 @forelse($data as $row)
     <tr>
         <td>{{ $row->nim }}</td>
         <td>{{ $row->nama }}</td>
         <td>{{ $row->kelas }}</td>
+        <td><a class="btn btn-danger" href="/hapus/{{ $row->nim }}">Hapus</a></td>
     </tr>
 @empty
     <tr>
