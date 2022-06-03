@@ -26,7 +26,11 @@
         <td>{{ $row->nim }}</td>
         <td>{{ $row->nama }}</td>
         <td>{{ $row->kelas }}</td>
-        <td><a class="btn btn-danger" href="/hapus/{{ $row->nim }}">Hapus</a></td>
+        <td>
+            <a class="btn btn-danger" href="/hapus/{{ $row->nim }}">Hapus</a>
+            <a class="btn btn-warning" href="/form-ubah/{{ $row->nim }}">Ubah</a>
+        </td>
+
     </tr>
 @empty
     <tr>

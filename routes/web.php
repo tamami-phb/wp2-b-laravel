@@ -27,3 +27,7 @@ Route::get('/form-tambah', function() {
 Route::post('/tambah', [ MahasiswaController::class, 'tambah' ]);
 
 Route::get('/hapus/{nim}', [ MahasiswaController::class, 'hapus' ]);
+
+Route::get('/form-ubah/{nim}', [ MahasiswaController::class, 'formUbah' ]);
+
+Route::post('/ubah', [ MahasiswaController::class, 'ubah' ]);

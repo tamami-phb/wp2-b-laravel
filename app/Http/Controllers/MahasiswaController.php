@@ -26,4 +26,18 @@ class MahasiswaController extends Controller
         $mhs->delete();
         return $this->getAll();
     }
+
+    public function formUbah($nim) {
+        $mhs = Mahasiswa::where('nim', $nim)->first();
+        return view('form-ubah', [ 'mhs' => $mhs ]);
+    }
+
+    public function ubah(Request $req) {
+        $mhs = Mahasiswa::where('nim', $req->nim)->first();
+        $mhs->nama = $req->nama;
+        $mhs->kelas = $req->kelas;
+        $mhs->save();
+        return $this->getAll();
+    }
+
 }
