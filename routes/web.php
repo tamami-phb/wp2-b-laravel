@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,16 @@ Route::get('/hapus/{nim}', [ MahasiswaController::class, 'hapus' ]);
 Route::get('/form-ubah/{nim}', [ MahasiswaController::class, 'formUbah' ]);
 
 Route::post('/ubah', [ MahasiswaController::class, 'ubah' ]);
+
+
+// ajax based apps
+
+Route::get('/ajax', function() {
+    return view('ajax.index');
+});
+
+Route::get('/ajax/get-all-data', [ ApiController::class, 'getAllData' ]);
+
+Route::post('/ajax/simpan', [ ApiController::class, 'simpan' ]);
+
+Route::get('/ajax/hapus/{nim}', [ ApiController::class, 'hapus' ]);
